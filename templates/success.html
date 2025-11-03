@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="success-card">
+  <div class="face-header">
+    <img src="{{ url_for('static', filename='img/logo.svg') }}" class="face-logo" alt="logo">
+    <span class="brand-text">IDENTIKAI</span>
+  </div>
+
+  <h2>Asistencia Registrada con Éxito</h2>
+  <p class="muted center">¡Tu rostro ha sido validado y tu asistencia ha quedado registrada correctamente!</p>
+
+  <div class="big-check">✔</div>
+
+  <div class="actions">
+    <a class="btn" href="{{ url_for('face_register') }}">Realizar un nuevo registro</a>
+    <a class="btn ghost" href="{{ url_for('logout') }}">Cerrar sesión</a>
+  </div>
+</div>
+{% endblock %}

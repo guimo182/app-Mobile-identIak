@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Seguridad y autenticación inteligente con IA</h1>
+  <p>Nuestra plataforma utiliza inteligencia artificial de vanguardia para proteger las identidades.</p>
+  {% if not user %}
+    <a class="btn" href="{{ url_for('login') }}">Probar en móvil</a>
+  {% else %}
+    <a class="btn" href="{{ url_for('face_register') }}">Probar en móvil</a>
+  {% endif %}
+</section>
+
+<section class="features">
+  <article class="feature">
+    <div class="icon">⏱️</div>
+    <h3>Autenticación Rápida</h3>
+    <p>Acceso ágil y seguro a tus servicios</p>
+  </article>
+  <article class="feature">
+    <div class="icon">🛡️</div>
+    <h3>Seguridad Avanzada</h3>
+    <p>Protección continua contra amenazas</p>
+  </article>
+  <article class="feature">
+    <div class="icon">🤖</div>
+    <h3>IA Confiable</h3>
+    <p>Algoritmos precisos y eficaces</p>
+  </article>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IDENTIKAI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/logo.svg') }}">
+</head>
+<body class="theme-dark">
+  <header class="topbar">
+    <div class="brand">
+      <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Identikai" class="logo">
+      <span class="brand-text">IDENTIKAI</span>
+    </div>
+    <nav class="nav">
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="#services">Servicios</a>
+      <a href="#about">Nosotros</a>
+      <a href="#contact">Contacto</a>
+      {% if user %}
+        <a class="btn small" href="{{ url_for('face_register') }}">Probar en móvil</a>
+        <a class="pill" href="{{ url_for('logout') }}">Cerrar sesión</a>
+      {% else %}
+        <a class="pill" href="{{ url_for('login') }}">Ingresar</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-wrap">
+      {% for category, msg in messages %}
+        <div class="flash {{category}}">{{ msg }}</div>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>© {{ 2025 }} IDENTIKAI. Seguridad y autenticación inteligente con IA.</p>
+  </footer>
+</body>
+</html>

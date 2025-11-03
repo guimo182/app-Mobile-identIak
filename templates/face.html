@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="face-card">
+  <div class="face-header">
+    <img src="{{ url_for('static', filename='img/logo.svg') }}" class="face-logo" alt="logo">
+    <span class="brand-text">IDENTIKAI</span>
+  </div>
+
+  <h2>Registro Facial</h2>
+  <div class="camera-area">
+    <video id="video" autoplay playsinline></video>
+  </div>
+
+  <p class="muted center">Centra tu rostro en el recuadro</p>
+  <button id="captureBtn" class="btn">Registrar asistencia</button>
+
+  <div class="hints">
+    <div class="ok">✔ Centra tu rostro en el recuadro</div>
+    <div class="no">✖ Evita contraluz y objetos</div>
+  </div>
+
+  <p id="status" class="status"></p>
+</div>
+
+<script src="{{ url_for('static', filename='js/face.js') }}"></script>
+{% endblock %}

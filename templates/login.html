@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-card">
+  <img src="{{ url_for('static', filename='img/logo.svg') }}" class="auth-logo" alt="logo">
+  <h2>Iniciar Sesión</h2>
+  <form method="post" class="form">
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <div class="password-field">
+      <input type="password" name="password" placeholder="Contraseña" required>
+    </div>
+    <button class="btn" type="submit">Iniciar sesión</button>
+  </form>
+  <div class="socials">
+    <span class="social">G</span>
+    <span class="social">✉️</span>
+    <span class="social">@</span>
+    <span class="social">f</span>
+  </div>
+  <p class="muted">¿No tienes una cuenta? <a href="{{ url_for('signup') }}">Registrarse</a></p>
+</div>
+{% endblock %}
