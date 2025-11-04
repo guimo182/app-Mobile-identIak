@@ -1,4 +1,7 @@
 # IDENTIKAI (Demo)
+
+https://www.figma.com/proto/7QvFD7JcIUKNBiO3vWLGbv/One-Credit-Card-App-UI--Community-?node-id=1-2&t=EckDgyqdzaWobnaT-1&starting-point-node-id=1%3A2
+
 Aplicativo web *responsivo* (Flask + HTML/CSS/JS) que simula un flujo de **registro/validación facial** para marcar asistencia.  
 No realiza reconocimiento biométrico real; guarda una captura y registra la asistencia en SQLite.
 
